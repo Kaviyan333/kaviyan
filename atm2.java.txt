@@ -1,0 +1,167 @@
+package basic;
+import java.util.Scanner;
+
+public class lmnop2 {
+static Scanner sc = new Scanner(System.in);
+static int a,d,g,i=0,p=0,p1=0;
+static int b=48000;
+static int j=1300000;
+static int ty[]= {45,68,45,68};
+public static void main(String [] args) {
+welcome();
+    hello();
+}
+public static void hello() {
+if(a>5 || a<1)
+       welcome();
+     switch(a){
+         case 1:{
+             admin();
+          }
+         case 2:{
+            user();
+          }
+         case 3:{
+              System.out.print("Thank you for visting the atm");
+              sc.nextLine();
+              welcome();
+          }
+         case 4:{
+         pinchange();
+         }
+         /*case 5:{
+         ministatement();
+         }*/
+      }
+  }
+
+public static void welcome() {
+System.out.println("\nWelcome");
+System.out.println("1.admin");
+System.out.println("2.user");
+System.out.println("3.exit");
+a = sc.nextInt();
+hello();
+}
+public static void admin() {
+System.out.println("Enter admin id");
+int c = sc.nextInt();
+System.out.println("Enter password");
+int d = sc.nextInt();
+if(c==0&&d==0) {
+adminlogin();
+}
+}
+public static void adminlogin() {
+System.out.println("Welcome admin");
+System.out.println("1.add amount");
+System.out.println("2.show available amount");
+System.out.println("3.exit");
+int l = sc.nextInt();
+if(l==1) {
+add();
+}
+else if(l==2) {
+show();
+}
+else {
+welcome();
+}
+}
+public static void add() {
+System.out.println("Enter number of notes to add");
+      System.out.println("Enter number of 2000");
+      ty[0]+=sc.nextInt();
+      System.out.println("Enter number of 500");
+      ty[1]+=sc.nextInt();
+      System.out.println("Enter number of 200");
+      ty[2]+=sc.nextInt();
+      System.out.println("Enter number of 100:");
+      ty[3]+=sc.nextInt();
+      System.out.println("Enter");
+      sc.nextLine();
+      String f=sc.nextLine();
+      if(f.equals(""))
+      {
+      adminlogin();
+      }
+}
+public static void  show() {
+System.out.println("no. of 2000:"+ty[0]);
+   System.out.println("no. of 500:"+ty[1]);
+   System.out.println("no. of 200:"+ty[2]);
+   System.out.println("no. of 100"+ty[3]);
+   System.out.println("press Enter");
+   sc.nextLine();
+   String s=sc.nextLine();
+   if(s.equals("")){
+          adminlogin();
+    }
+}
+public static void user() {
+System.out.println("Welcome user");
+System.out.println("Enter user id:");
+int h =sc.nextInt();
+System.out.println("Enter password:");
+p = sc.nextInt();
+if(h==0&&p==p) {
+System.out.println("1.Withdraw");
+System.out.println("2.check balance");
+System.out.println("3.pinchange");
+System.out.println("4.ministament");
+System.out.println("5.exit");
+int k = sc.nextInt();
+if(k==1) {
+withdraw();
+}
+else if(k==2) {
+balance();
+}
+else if(k==3) {
+pinchange();
+}
+else {
+welcome();
+}
+}
+else {
+System.out.println("Please Enter correct id and passwrod");
+welcome();
+}
+}
+public static void withdraw() {
+System.out.println("enter the amount to be withdrawn");
+d = sc.nextInt();
+if(b>=d) {
+g = b-d;
+System.out.println("available balance:"+g);
+sc.nextLine();
+welcome();
+}
+else {
+System.out.println("enter valid amount");
+sc.nextLine();
+welcome();
+}
+}
+public static void balance() {
+int z=b-d;
+System.out.println("available balance:"+z);
+}
+public static void pinchange() {
+System.out.println("enter old pin:");
+i = sc.nextInt();
+if(i==p) {
+System.out.println("Enter new pin:");
+int p1=sc.nextInt();
+System.out.println("Pin changed successfully");
+i=p1;
+welcome();
+}
+else {
+System.out.println("Entered wrong pin:");
+}
+
+}
+}
+
